@@ -1,0 +1,25 @@
+{
+  "name": "nightlife-cordination-app",
+  "version": "1.0.0",
+  "description": "A FreeCodeCamp Basejump: Build A NightLife Cordination App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lexyblazy/nightlife-cordination-app.git"
+  },
+  "keywords": [
+    "FreeCodeCamp",
+    "Javascript",
+    "NodeJS",
+    "MongoDB"
+  ],
+  "author": "lexy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lexyblazy/nightlife-cordination-app/issues"
+  },
+  "homepage": "https://github.com/lexyblazy/nightlife-cordination-app#readme"
+}
