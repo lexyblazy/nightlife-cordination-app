@@ -2,9 +2,10 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 const mongoose = require("mongoose");
 const { DB } = require("./config/keys");
+const authRoutes = require("./routes/authRoutes");
 // connect to the database;
 mongoose
   .connect(DB)
@@ -18,6 +19,10 @@ mongoose
   });
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));
+
+//load up routes
+app.use(authRoutes);
+
 app.listen(PORT, () => {
   //eslint-disable-next-line no-console
   console.log("Server is up and running");
