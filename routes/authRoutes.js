@@ -1,11 +1,14 @@
 const router = require("express").Router({ mergeParams: true });
+const passport = require("passport");
+router.get("/auth/twitter", passport.authenticate("twitter"));
 
-router.get("/auth/twitter", (req, res) => {
-  res.send("This will handle twitter authentication");
-});
-
-router.get("/auth/twitter/callback", (req, res) => {
-  res.send("This will handle the callback");
-});
+router.get(
+  "/auth/twitter/callback",
+  passport.authenticate("twitter", { failureRedirect: "/api" }),
+  (req, res) => {
+    // Successful authentication, redirect home.
+    res.redirect("/");
+  }
+);
 
 module.exports = router;
